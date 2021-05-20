@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "mcexamples:block/block_simple_model" }
+    }
+}
