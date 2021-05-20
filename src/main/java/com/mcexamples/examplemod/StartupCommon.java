@@ -1,6 +1,7 @@
 package com.mcexamples.examplemod;
 
 import net.minecraft.block.AbstractBlock.Properties;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -11,12 +12,31 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.IForgeRegistry;
 
 public class StartupCommon {
 
 	public static BlockSimple blockSimple1;  // this holds the unique instance of your block
 	  public static BlockItem itemBlockSimple;  // this holds the unique instance of the ItemBlock corresponding to your block
+	  
+	  @SubscribeEvent
+	    public static void createBlockItem(final RegistryEvent.Register<Item> event)
+	    {
+	        final IForgeRegistry<Item> registry = event.getRegistry();
+	        BlockList.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block ->
+	        {
+	                final Item.Properties properties = new Item.Properties().tab(ItemGroup.TAB_MISC);
+	                final BlockItem blockitem  = new BlockItem(block, properties);
+	                blockitem.setRegistryName(block.getRegistryName());
+	                registry.register(blockitem);
+	        });
+	    }
+	  
+	  
 
 	 /* @SubscribeEvent
 	  public static void onBlocksRegistration(final RegistryEvent.Register<Block> blockRegisterEvent) {
@@ -26,22 +46,19 @@ public class StartupCommon {
 	    blockRegisterEvent.getRegistry().register(blockSimple);
 	  }*/
 	  
-	  @SubscribeEvent
+	/*  @SubscribeEvent
 	  public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		 // Material material = new Material(MaterialColor.COLOR_PURPLE, false, false, false, false, false, false, null );
-		 // Properties props = Properties.of(material);
-	    System.out.println("in register block of sc : " + event.getName() + "  reg name : " + event.getRegistry().getRegistryName());
+		 System.out.println("in register block of sc : " + event.getName() + "  reg name : " + event.getRegistry().getRegistryName());
 		  blockSimple1 = (BlockSimple) new BlockSimple().setRegistryName("mcexamples", "block_simple_registry_name"); 
 				  
-				  /*(BlockSimple)(new BlockSimple(Properties.of(Material.METAL)
-                .sound(SoundType.METAL)
-                .strength(2.0f)
-                .lightLevel(state -> state.getValue(BlockStateProperties.POWERED) ? 14 : 0))
-	    		.setRegistryName("mcexamples", "block_simple_registry_name"));*/
+				
 	    System.out.println("block registered :" + blockSimple1);
 	    event.getRegistry().register(blockSimple1);
 	      //event.getRegistry().registerAll(blockSimple1);
-	  }
+	    
+	    //final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
+	    //final RegistryObject<Block> SILVER_BLOCK = BLOCKS.register("silver_block", () -> new Block(AbstractBlock.Properties.of(Material.METAL, MaterialColor.METAL).requiresCorrectToolForDrops().strength(4.0f, 6.0f).sound(SoundType.METAL).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	  }*/
 
 	/*  @SubscribeEvent
 	  public static void onItemsRegistration(RegistryEvent.Register<Item> itemRegisterEvent) {

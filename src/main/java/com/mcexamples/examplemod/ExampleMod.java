@@ -2,6 +2,8 @@ package com.mcexamples.examplemod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,16 +25,19 @@ import org.apache.logging.log4j.Logger;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.*;
+
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("mcexamples")
+@Mod(ExampleMod.MOD_ID)
 public class ExampleMod
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
     public static Item item;
-
+    public static final String MOD_ID = "mcexamples";
+    
     public ExampleMod() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -44,12 +49,12 @@ public class ExampleMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         //final ClientSideOnlyModEventRegistrar clientSideOnlyModEventRegistrar = new ClientSideOnlyModEventRegistrar(modEventBus);
         registerCommonEvents(modEventBus);
-        
+        BlockList.BLOCKS.register(modEventBus);
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in
-        //MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(this);
         
     }
 
@@ -69,10 +74,15 @@ public class ExampleMod
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.description());
-        RenderTypeLookup.setRenderLayer(StartupCommon.blockSimple1, RenderType.solid());
+        RegisterEntityModels(event.getMinecraftSupplier());
     }
 
-    private void enqueueIMC(final InterModEnqueueEvent event)
+    private void RegisterEntityModels(Supplier<Minecraft> minecraftSupplier) {
+		// TODO Auto-generated method stub
+    	 ItemRenderer renderer = minecraftSupplier.get().getItemRenderer();
+	}
+
+	private void enqueueIMC(final InterModEnqueueEvent event)
     {
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});

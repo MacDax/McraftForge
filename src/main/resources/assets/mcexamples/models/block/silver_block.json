@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+      "all": "mcexamples:blocks/silver_block"
+  }
+}

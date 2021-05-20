@@ -13,11 +13,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockSimple extends Block {
 
 	  private static final String REGISTRY_NAME = "block_simple_registry_name.json";
-//new Block(AbstractBlock.Properties.of(Material.STONE).(*some preperties*)
+
 	public BlockSimple() {
 		
 		 super(AbstractBlock.Properties.of(Material.METAL));
@@ -25,6 +28,8 @@ public class BlockSimple extends Block {
 	                //.strength(2.0f));
 	                //.lightLevel(state -> state.getValue(BlockStateProperties.POWERED) ? 14 : 0)
 	        //);
+		 
+		
 	}
 
 	 
