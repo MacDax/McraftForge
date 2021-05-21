@@ -1,4 +1,4 @@
-package com.mcexamples.examplemod;
+/*package com.mcexamples.examplemod;
 
 import javax.annotation.Nullable;
 
@@ -44,10 +44,10 @@ public class BlockSimple extends Block {
 	    return BlockRenderType.MODEL;
 	  }
 	 
-	/* @SideOnly(Side.class)
+	 @SideOnly(Side.class)
 	 public BlockRenderLayer getBlockLayer() {
 		 
-	 }*/
+	 }
 	 
 	 @Override
 	    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
@@ -56,3 +56,4 @@ public class BlockSimple extends Block {
 	
 	
 }
+*/

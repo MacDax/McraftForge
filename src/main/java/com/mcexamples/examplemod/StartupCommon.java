@@ -1,29 +1,27 @@
 package com.mcexamples.examplemod;
 
-import net.minecraft.block.AbstractBlock.Properties;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
+import com.mcexamples.lists.BlockList;
+
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class StartupCommon {
 
-	public static BlockSimple blockSimple1;  // this holds the unique instance of your block
-	  public static BlockItem itemBlockSimple;  // this holds the unique instance of the ItemBlock corresponding to your block
+	
+	
+
+//public static final RegistryObject<Block> ROCK_BLOCK = BLOCKS.register("rock", () -> new Block(Block.Properties.create(Material.ROCK)));
+
+
+	 
 	  
-	  @SubscribeEvent
+	  /*@SubscribeEvent
 	    public static void createBlockItem(final RegistryEvent.Register<Item> event)
 	    {
 	        final IForgeRegistry<Item> registry = event.getRegistry();
@@ -35,7 +33,7 @@ public class StartupCommon {
 	                registry.register(blockitem);
 	        });
 	    }
-	  
+	  */
 	  
 
 	 /* @SubscribeEvent
