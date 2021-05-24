@@ -1,4 +1,4 @@
-package com.MacDax.mcexamples.examplemod;
+package com.MacDax.mcexamples;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;

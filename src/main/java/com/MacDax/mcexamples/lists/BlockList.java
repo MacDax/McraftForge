@@ -1,8 +1,8 @@
-package com.MacDax.mcexamples.examplemod.lists;
+package com.MacDax.mcexamples.lists;
 
 import java.util.function.Supplier;
 
-import com.MacDax.mcexamples.examplemod.ExampleMod;
+import com.MacDax.mcexamples.ExampleMod;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.AbstractBlock.Properties;

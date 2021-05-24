@@ -1,7 +1,7 @@
-package com.MacDax.mcexamples.examplemod.objects.entities;
+package com.MacDax.mcexamples.objects.entities;
 
-import com.MacDax.mcexamples.examplemod.lists.EntityList;
-import com.MacDax.mcexamples.examplemod.lists.ItemList;
+import com.MacDax.mcexamples.lists.EntityList;
+import com.MacDax.mcexamples.lists.ItemList;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

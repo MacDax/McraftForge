@@ -1,4 +1,4 @@
-package com.MacDax.mcexamples.examplemod;
+package com.MacDax.mcexamples;
 /*package com.mcexamples.examplemod;
 
 import javax.annotation.Nullable;

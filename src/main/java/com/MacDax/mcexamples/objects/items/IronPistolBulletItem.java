@@ -1,4 +1,4 @@
-package com.MacDax.mcexamples.examplemod.objects.items;
+package com.MacDax.mcexamples.objects.items;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

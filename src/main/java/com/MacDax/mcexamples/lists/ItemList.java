@@ -1,8 +1,8 @@
-package com.MacDax.mcexamples.examplemod.lists;
+package com.MacDax.mcexamples.lists;
 
-import com.MacDax.mcexamples.examplemod.ExampleMod;
-import com.MacDax.mcexamples.examplemod.objects.items.IronPistolBulletItem;
-import com.MacDax.mcexamples.examplemod.objects.items.SilverPistolBulletItem;
+import com.MacDax.mcexamples.ExampleMod;
+import com.MacDax.mcexamples.objects.items.IronPistolBulletItem;
+import com.MacDax.mcexamples.objects.items.SilverPistolBulletItem;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
