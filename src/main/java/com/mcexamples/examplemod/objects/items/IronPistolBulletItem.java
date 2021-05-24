@@ -1,6 +1,6 @@
-package com.mcexamples.objects.items;
+package com.mcexamples.examplemod.objects.items;
 
-import com.mcexamples.objects.entities.IronPistolBulletEntity;
+import com.mcexamples.examplemod.objects.entities.IronPistolBulletEntity;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -15,7 +15,7 @@ public class IronPistolBulletItem   extends Item {
     }
 
 
-    public void onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
+    /*public void onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
     {
         //ExampleMod.LOGGER.debug("Entering onItemRightClock()");
         ItemStack stack = playerIn.getItemInHand(handIn);
@@ -25,5 +25,5 @@ public class IronPistolBulletItem   extends Item {
             ironbullet.setItem(stack);
             ironbullet.shoot(playerIn.getRotationVector().y, playerIn.getRotationVector().x, 0.0f, 1.5f, 1.0f);
         }
-    }
+    }*/
 }

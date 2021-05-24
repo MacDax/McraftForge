@@ -29,9 +29,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.mcexamples.lists.BlockList;
-import com.mcexamples.lists.EntityList;
-import com.mcexamples.lists.ItemList;
+import com.mcexamples.examplemod.lists.BlockList;
+import com.mcexamples.examplemod.lists.EntityList;
+import com.mcexamples.examplemod.lists.ItemList;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -46,6 +46,7 @@ import java.util.stream.Collectors;
 @Mod.EventBusSubscriber(modid = ExampleMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ExampleMod
 {
+	public static ExampleMod instance;
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
     public static Item item;
@@ -61,20 +62,18 @@ public class ExampleMod
      */
     
     public ExampleMod() {
+    	instance = this;
         // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
-       // FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
-        //FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-      //  
+        //FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+         
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        modEventBus.addListener(this::setup);
+       modEventBus.addListener(this::doClientStuff);
         //registerCommonEvents(modEventBus);
        // BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BlockList.BLOCKS.register(modEventBus);
         ItemList.ITEMS.register(modEventBus);
-        EntityList.ENTITIES.register(modEventBus);
+        //EntityList.ENTITIES.register(modEventBus);
         // Register the doClientStuff method for modloading
        
 
@@ -89,7 +88,7 @@ public class ExampleMod
 		
 	}*/
     
-    @SubscribeEvent
+  /*  @SubscribeEvent
     public static void createBlockItem(final RegistryEvent.Register<Item> event)
     {
         final IForgeRegistry<Item> registry = event.getRegistry();
@@ -100,7 +99,7 @@ public class ExampleMod
                 blockitem.setRegistryName(block.getRegistryName());
                 registry.register(blockitem);
         });
-    }
+    }*/
   
 
 	private void setup(final FMLCommonSetupEvent event)
@@ -118,8 +117,8 @@ public class ExampleMod
 
     private void RegisterEntityModels(Supplier<Minecraft> minecraftSupplier) {
 		 ItemRenderer renderer = minecraftSupplier.get().getItemRenderer();
-    	 RenderingRegistry.registerEntityRenderingHandler(EntityList.SILVER_PISTOL_BULLET_PROJECTILE.get(), (rendererManager) -> new SpriteRenderer<>(rendererManager, renderer));
-         RenderingRegistry.registerEntityRenderingHandler(EntityList.IRON_PISTOL_BULLET_PROJECTILE.get(), (rendererManager) -> new SpriteRenderer<>(rendererManager, renderer));
+    	 //RenderingRegistry.registerEntityRenderingHandler(EntityList.SILVER_PISTOL_BULLET_PROJECTILE.get(), (rendererManager) -> new SpriteRenderer<>(rendererManager, renderer));
+         //RenderingRegistry.registerEntityRenderingHandler(EntityList.IRON_PISTOL_BULLET_PROJECTILE.get(), (rendererManager) -> new SpriteRenderer<>(rendererManager, renderer));
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event)

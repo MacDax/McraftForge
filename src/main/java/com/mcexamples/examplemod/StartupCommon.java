@@ -1,6 +1,6 @@
 package com.mcexamples.examplemod;
 
-import com.mcexamples.lists.BlockList;
+import com.mcexamples.examplemod.lists.BlockList;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
