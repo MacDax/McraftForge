@@ -1,4 +1,4 @@
-package com.mcexamples.examplemod;
+package com.MacDax.mcexamples.examplemod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -29,9 +29,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.mcexamples.examplemod.lists.BlockList;
-import com.mcexamples.examplemod.lists.EntityList;
-import com.mcexamples.examplemod.lists.ItemList;
+import com.MacDax.mcexamples.examplemod.lists.BlockList;
+import com.MacDax.mcexamples.examplemod.lists.ItemList;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;

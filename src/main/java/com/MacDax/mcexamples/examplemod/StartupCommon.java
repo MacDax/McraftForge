@@ -1,6 +1,4 @@
-package com.mcexamples.examplemod;
-
-import com.mcexamples.examplemod.lists.BlockList;
+package com.MacDax.mcexamples.examplemod;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;

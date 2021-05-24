@@ -1,6 +1,4 @@
-package com.mcexamples.examplemod.objects.items;
-
-import com.mcexamples.examplemod.objects.entities.IronPistolBulletEntity;
+package com.MacDax.mcexamples.examplemod.objects.items;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

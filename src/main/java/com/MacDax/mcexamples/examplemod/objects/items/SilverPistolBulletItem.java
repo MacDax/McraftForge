@@ -1,6 +1,6 @@
-package com.mcexamples.examplemod.objects.items;
+package com.MacDax.mcexamples.examplemod.objects.items;
 
-import com.mcexamples.examplemod.objects.entities.SilverPistolBulletEntity;
+import com.MacDax.mcexamples.examplemod.objects.entities.SilverPistolBulletEntity;
 
 import net.minecraft.block.AbstractBlock.Properties;
 import net.minecraft.entity.player.PlayerEntity;

@@ -1,8 +1,8 @@
-package com.mcexamples.examplemod.lists;
+package com.MacDax.mcexamples.examplemod.lists;
 
-import com.mcexamples.examplemod.ExampleMod;
-import com.mcexamples.examplemod.objects.entities.IronPistolBulletEntity;
-import com.mcexamples.examplemod.objects.entities.SilverPistolBulletEntity;
+import com.MacDax.mcexamples.examplemod.ExampleMod;
+import com.MacDax.mcexamples.examplemod.objects.entities.IronPistolBulletEntity;
+import com.MacDax.mcexamples.examplemod.objects.entities.SilverPistolBulletEntity;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
