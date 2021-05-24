@@ -1,4 +1,4 @@
-package com.MacDax.mcexamples;
+package com.macdax.mcexamples;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
